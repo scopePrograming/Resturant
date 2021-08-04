@@ -9,8 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class NavbarComponent implements OnInit {
 
-  flag : String = ''
-  checkToken: any = {}
+  checkToken = localStorage.getItem('status')
 
 
   constructor(public _userService: UsersService, private _router: Router) { }
@@ -23,8 +22,8 @@ export class NavbarComponent implements OnInit {
       () => { },
       () => {
         localStorage.removeItem('token')
-        this.checkToken = localStorage.getItem('token')
-        this._router.navigate(['/'])
+        localStorage.setItem('status', '0')
+        this._router.navigate(['/users/login'])
       })
   }
   logoutAll() {

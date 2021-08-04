@@ -31,22 +31,24 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-            <span *ngIf="checkToken === {}; then showLogout else showLogin"></span>
-            
+            <!-- <span *ngIf="checkToken === {}; then showLogout else showLogin"></span> -->
+
             {{checkToken | json}}
-            <ng-template #showLogin>
+            <!-- <ng-template #showLogin> -->
+            <div *ngIf="checkToken =='0' || checkToken== null">
                 <div class="nav-item">
                     <a class="nav-link" routerLink="/users/login">Login</a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" routerLink="/users/register">Register</a>
                 </div>
-            </ng-template>
-            <ng-template #showLogout>
-                <div class="nav-item">
-                    <a class="nav-link" (click)="logout()">Logout</a>
-                </div>
-            </ng-template>
+            </div>
+            <!-- </ng-template> -->
+            <!-- <ng-template #showLogout> -->
+            <div class="nav-item" *ngIf="checkToken == '1'">
+                <a class="nav-link" (click)="logout()">Logout</a>
+            </div>
+            <!-- </ng-template> -->
         </div>
     </div>
 </nav>

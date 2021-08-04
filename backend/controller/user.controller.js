@@ -180,11 +180,12 @@ const deleteUserByAdmin = async (req, res) => {
     try {
         let id = req.params.id
         if (id == req.user._id) throw new Error()
-        // let data = await User.findById(id)
-        await User.findOneAndDelete(id)
+        let data = await User.findById(id)
+        if (!data) throw new Error(`Data not founded of user`)
+        await data.remove()
         res.status(200).send({
             apiStatus: true,
-            // success: data,
+            success: data,
             message: `Deleted Done`
         })
     }

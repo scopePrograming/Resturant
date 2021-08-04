@@ -24,7 +24,6 @@ export class ShowAllUsersComponent implements OnInit {
     this._userService.showAllUsers().subscribe(res => {
       this.result = res
       this.allUsers = this.result.success
-      console.log(res)
     },
       (e) => {
         this.msgCheck = e.error.message
@@ -37,11 +36,11 @@ export class ShowAllUsersComponent implements OnInit {
   deleteUserByAdmin(i: Required<number>) {
     this._userService.deleteUserByAdmin(this.id).subscribe(res => {
       console.log(res)
-      this.singleUser = res.success
+      this.allUsers = res.success
     },
       () => { },
       () => {
-        this.singleUser.removeAt(i)
+        this.allUsers.removeAt(i)
         this._router.navigate(['/showallusers'])
       })
   }

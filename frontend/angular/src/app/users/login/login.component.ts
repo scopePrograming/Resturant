@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
 
             let token = this.result.success.token
             localStorage.setItem('token', token)
+            localStorage.setItem('status', '1')
             let typeUser = this.result.success.user.userType
 
             typeUser == 'user' ?

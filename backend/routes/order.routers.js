@@ -11,9 +11,9 @@ const orderController = require('../controller/order.controller')
 router.post('/addorder', orderController.addOrder)
 
 // Edit order
-router.patch('/edit/:id',auth.adminAuth ,orderController.editOrder)
+router.patch('/edit/:id', auth.adminAuth, orderController.editOrder)
 
 // cancel order
-router.get('/cancelOrder/:id',auth.userAuth ,orderController.cancelOrder)
+router.get('/cancelOrder/:id', auth.userAuth, orderController.cancelOrder)
 
 module.exports = router
