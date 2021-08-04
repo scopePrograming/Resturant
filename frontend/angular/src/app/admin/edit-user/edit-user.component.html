@@ -1,0 +1,87 @@
+<section class="my-3">
+    <div class="container">
+        <div class="row">
+            <h3 class="">Edit user</h3>
+            <form class="my-2 py-2" method="POST" [formGroup]="userData" (ngSubmit)='editUser()' autocomplete="off"
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First name :</label>
+                    <input type="text" formControlName='fname' class="form-control" id="fname" />
+                    <div *ngIf="isSubmited || (fname?.invalid && (fname?.dirty || fname?.touched))">
+                        <ul>
+                            <li *ngIf="fname?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="fname?.errors?.pattern">
+                                Plese used char only
+                            </li>
+                            <li *ngIf="fname?.errors?.minlength">
+                                Please write 3 or more
+                            </li>
+                            <li *ngIf="fname?.errors?.maxlength">
+                                Please write 20 or less
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last name :</label>
+                    <input type="text" formControlName='lname' class="form-control" id="lname" />
+                    <div *ngIf="isSubmited || (lname?.invalid && (lname?.dirty || lname?.touched))">
+                        <ul>
+                            <li *ngIf="lname?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="lname?.errors?.pattern">
+                                Plese used char only
+                            </li>
+                            <li *ngIf="lname?.errors?.minlength">
+                                Please write 3 or more
+                            </li>
+                            <li *ngIf="lname?.errors?.maxlength">
+                                Please write 20 or less
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="text" formControlName='email' class="form-control" id="email" />
+                    <div *ngIf="isSubmited || (email?.invalid && (email?.dirty || email?.touched))">
+                        <ul>
+                            <li *ngIf="email?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="email?.errors?.email">
+                                Please valid email
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone :</label>
+                    <input type="text" formControlName='phone' class="form-control" id="phone" />
+                    <div *ngIf="isSubmited || (phone?.invalid && (phone?.dirty || phone?.touched))">
+                        <ul>
+                            <li *ngIf="phone?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="phone?.errors?.pattern">
+                                Please write number only
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="uploadFile" (change)="uploadImage($event)">
+                </div>
+                <button type="submit" class="btn btn-primary">Edit User</button>
+            </form>
+        </div>
+    </div>
+</section>

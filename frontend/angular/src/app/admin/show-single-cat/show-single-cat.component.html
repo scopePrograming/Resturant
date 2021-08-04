@@ -1,0 +1,59 @@
+<section class="my-3">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <h3>{{cat.catName}}</h3>
+            <a routerLink="/category/editCats/{{cat._id}}" class="fs-4">Edit</a>
+        </div>
+        <table class="table table-striped table-hover my-1">
+            <thead>
+                <th>item name</th>
+                <th>description</th>
+                <th>size || price</th>
+                <th>Date</th>
+                <th>
+                    <tr>Offers</tr>
+                    <tr>
+                        <th>status |</th>
+                        <th>Price |</th>
+                        <th>description</th>
+                    </tr>
+                </th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of allItems let i = index">
+
+                    <td>{{item.name}}</td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <tr *ngFor="let s of item.size">
+                            <td>{{s.sizeType}}</td>
+                            <td>{{s.price}}</td>
+                        </tr>
+                    </td>
+                    <td>
+                        <tr>
+                            <td>{{item.DateFrom | date: 'fullDate'}} || </td>
+                            <td>{{item.DateTo | date: 'fullDate'}}</td>
+                        </tr>
+                    </td>
+                    <td>
+                        <tr *ngFor="let offer of item.offer_item">
+                            <td>{{offer.is_offer}}</td>
+                            <td>{{offer.newPrice}}</td>
+                            <td>{{offer.desc}}</td>
+                        </tr>
+                    </td>
+
+                    <td class="btn-group">
+                        <a routerLink="/category/showSingleItem/{{item._id}}" class="btn btn-primary">Show</a>
+                        <a routerLink="" class="btn btn-success">Edit</a>
+                        <!-- <button (click)="deleteCat()">
+                        <a routerLink="/category/delCats/{{cat._id}}" class="btn btn-danger">Delete</a>
+                        </button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,146 @@
+<section class="my-3">
+    <div class="container">
+        <div class="row">
+            <h3 class="">Add Item</h3>
+
+            <div>{{msgCheck}}</div>
+            <form class="my-2 py-2" method="POST" [formGroup]="itemData" (ngSubmit)='addItem()' autocomplete="off" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="cat_id" class="form-label">Category name :</label>
+                    <select formControlName='cat_id' class="form-control" id="cat_id">
+                        <option value="" disabled>Select cats</option>
+                        <option *ngFor="let cat of category" [value]="cat._id">{{cat.catName}}</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="itemName" class="form-label">Item Name :</label>
+                    <input type="text" formControlName='name' class="form-control" id="itemName" />
+                     <div *ngIf="isSubmited || (name?.invalid && (name?.dirty || name?.touched))">
+                        <ul>
+                            <li *ngIf="name?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="name?.errors?.pattern">
+                                Plese used char only
+                            </li>
+                            <li *ngIf="name?.errors?.minlength">
+                                Please write 3 or more
+                            </li>
+                            <li *ngIf="name?.errors?.maxlength">
+                                Please write 20 or less
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description :</label>
+                    <textarea formControlName='description' class="form-control" id="description"></textarea>
+                    <div *ngIf="isSubmited || (description?.invalid && (description?.dirty || description?.touched))">
+                        <ul>
+                            <li *ngIf="description?.errors?.maxlength">
+                                Please write 200 or less
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row" formGroupName="size">
+                    <div class="col-6">
+                        
+                        <label for="size" class="form-label">size :</label>
+                        
+                        <select formControlName='sizeType' class="form-control" id="size" >
+                            <option value="" disabled>Choose size</option>
+                            <option  *ngFor="let s of size" [value]="s.val " (change)= "selectSize($event)">{{s.sizeType}}</option>
+                        </select>
+                        <div *ngIf="isSubmited || (sizeType?.invalid && (sizeType?.dirty || sizeType?.touched))">
+                            <ul>
+                                <li *ngIf="sizeType?.errors?.required">
+                                    Please fill this field
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col-6">
+                        <label for="price" class="form-label">price :</label>
+                        <input type="text" formControlName='price' class="form-control" id="price" />
+                        <div *ngIf="isSubmited || (price?.invalid && (price?.dirty || price?.touched))">
+                            <ul>
+                                <li *ngIf="price?.errors?.required">
+                                    Please fill this field
+                                </li>
+                                <li *ngIf="price?.errors?.pattern">
+                                    Plese used number only
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <label for="dateFrom" class="form-label">Date From :</label>
+                        <input type="date" formControlName='DateFrom' class="form-control" id="dateFrom" />
+
+                    </div>
+                    <div class="col-6">
+                        <label for="dateTo" class="form-label">Date To :</label>
+                        <input type="date" formControlName='DateTo' class="form-control" id="dateTo" />
+
+                    </div>
+                </div>
+
+                <div class="mb-3" formGroupName="offer_item">
+                    <div class="mb-3 form-check">
+                        <label class="form-check-label" for="offerStatus">offer Status</label>
+
+                        <input type="checkbox"  formControlName="is_offer" class="form-check-input" id="offerStatus" *ngIf = "checkBox != true; else show" (change)="offerStatus($event)" />
+                    </div>
+                <ng-template  #show>
+                    <div class="mb-3">
+                        <label for="newPrice" class="form-label">new price :</label>
+                        <input type="number" formControlName='newPrice' class="form-control" id="newPrice" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description :</label>
+                        <textarea formControlName='desc' class="form-control" id="description"></textarea>
+                    </div>
+                </ng-template>
+                    
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="file"  class="form-control" id="uploadFile" (change) = "uploadImage($event)">
+                    <label class="input-group-text" for="uploadFile">Upload</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="my-3">
+    <div class="container">
+        <div class="row">
+            <h3 class="">Add Item</h3>
+            <div>{{msgCheck}}</div>
+            <div>
+                <tabset>
+                    <!-- <form class="my-2 py-2" method="POST" [formGroup]="itemData" (ngSubmit)='addItem()' autocomplete="off" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="cat_id" class="form-label">Category name :</label>
+                            <select formControlName='cat_id' class="form-control" id="cat_id">
+                                <option value="" disabled>Select cats</option>
+                                <option *ngFor="let cat of category" [value]="cat._id">{{cat.catName}}</option>
+                            </select>
+                        </div>
+                    </form> -->
+                    <tab heading="{{cat.catName}}" id="tab1" *ngFor="let cat of category; let i = index"> test {{i}}</tab> 
+                </tabset>
+            </div>
+        </div>
+    </div>
+</section>

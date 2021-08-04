@@ -1,0 +1,28 @@
+<section class="my-3">
+    <div class="container">
+        <h3>{{msgCheck}}</h3>
+        <table class="table table-striped table-hover my-1">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>User type</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allUsers; let i = index">
+                    <td>{{user.fname}} {{user.lname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.userType}}</td>
+                    <td class="btn-group">
+                        <a routerLink="/showsingleuser/{{user._id}}" class="btn btn-primary">Show</a>
+                        <a routerLink="/edituser/{{user._id}}" class="btn btn-success">Edit</a>
+                        <a routerLink="/deleteuser/{{user._id}}" class="btn btn-danger"
+                            (click)="deleteUserByAdmin(i)">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

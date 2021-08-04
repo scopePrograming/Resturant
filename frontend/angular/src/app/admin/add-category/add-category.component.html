@@ -1,0 +1,31 @@
+<!-- <app-sidebar></app-sidebar> -->
+<section class="my-2">
+    <div class="container">
+        <div class="row">
+            <h3 class="">Add category</h3>
+            <div>{{msgCheck}}</div>
+
+            <form class="my-2 py-2" [formGroup]="catData" (ngSubmit)="addCats()">
+                <div class="mb-3">
+                    <label for="catName" class="form-label">Category name :</label>
+                    <input type="text" formControlName='catName' class="form-control" id="catName" />
+                    <div *ngIf="isSubmited || (catName?.invalid && (catName?.dirty || catName?.touched))">
+                        <ul>
+                            <li *ngIf="catName?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="catName?.errors?.minlength">
+                                Please write 3 or more
+                            </li>
+                            <li *ngIf="catName?.errors?.maxlength">
+                                Please write 20 or less
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add category</button>
+            </form>
+        </div>
+    </div>
+</section>

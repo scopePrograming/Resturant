@@ -1,0 +1,1340 @@
+{
+	"info": {
+		"_postman_id": "e2097486-2b40-43dd-8f19-c7650c5ce0f3",
+		"name": "New Collection Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "addCats",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ3NDQ2ODR9.KrnD00LkbnDvVyK8-FS2scH9w6VpvoN1W_0ocKLHqM8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catName\" : \"meat meat 5\",\n    \"meals\" : [ {\n        \"meal_name\": \"meal meal 5\",\n        \"meal_image\": \"image  meal meal 5\",\n        \"description\" :  \"the best meal meal 5\",\n        \"size\": [\n            { \"name\": \"large\", \"price\": 50 },\n            { \"name\": \"meduim\", \"price\": 40 },\n            { \"name\": \"small\", \"price\": 30 }\n        ],\n        \"offer_meal\":[\n            {\n            \"newPrice\": 10,\n            \"DateFrom\": \"12-10-2020\",\n            \"DateTo\": \"12-11-2020\"\n            },\n            {\n            \"newPrice\": 15,\n            \"DateFrom\": \"1-10-2020\",\n            \"DateTo\": \"1-11-2020\"\n            }\n        ]\n        } \n    ],\n    \"additions\": [\n        { \"addition_name\": \"name addition 1\", \"price\": 10  },\n        { \"addition_name\": \"name addition 2\", \"price\": 5  },\n        { \"addition_name\": \"name addition 3\", \"price\": 20  }\n    ],\n    \"general_offers\": [\n        {\n            \"offer_name\": \"offer name 1\",\n            \"offer_description\": \"the good offer 1\",\n            \"price\": 20,\n            \"meal_image\": \"image meal\",\n            \"DateFrom\": \"12-10-2020\",\n            \"DateTo\": \"12-11-2020\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/addCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"addCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "diaplayAllCats",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/displayCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"displayCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showSingleCat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/showCat/60d651d7c745382cf8865c3f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"showCat",
+								"60d651d7c745382cf8865c3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCat",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ3NTY0NjN9.6ED8cD24vsbbJDvbgdKmtcLrMJlwgJsekVqpXkrZu78",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/menu/deleteCat/60d634885ec5e83bf5aeabd3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"deleteCat",
+								"60d634885ec5e83bf5aeabd3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editCats",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "id",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3N2I0ZDNiODNlNTIzOWQ3Yzg3YzUiLCJpYXQiOjE2MjQ3MzkwMjN9.OD2_dOfEB9vXdsCUnDTtGpg2OZLKs4K5AKgFTs_5-5M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catName\": \"pizza 12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/editCats/60d625056647f34db2994f6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"editCats",
+								"60d625056647f34db2994f6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "meals",
+			"item": [
+				{
+					"name": "deleteSingleMeal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d64e99c257910eecc4029f/deleteSingleMeal/60d64e99c257910eecc402a0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d64e99c257910eecc4029f",
+								"deleteSingleMeal",
+								"60d64e99c257910eecc402a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showSingleMeal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d64e99c257910eecc4029f/showSingleMeal/60d64e99c257910eecc402a0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d64e99c257910eecc4029f",
+								"showSingleMeal",
+								"60d64e99c257910eecc402a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMeal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ3NDQ2ODR9.KrnD00LkbnDvVyK8-FS2scH9w6VpvoN1W_0ocKLHqM8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"meal_name\": \"petza3457\",\r\n        \"meal_image\": \"image petza347\",\r\n        \"description\" :  \"the best petza347\",\r\n        \"size\": [\r\n            { \"name\": \"large\", \"price\": 50 },\r\n            { \"name\": \"meduim\", \"price\": 40 },\r\n            { \"name\": \"small\", \"price\": 30 }\r\n        ],\r\n        \"offer_meal\":[\r\n            {\r\n            \"newPrice\": 10,\r\n            \"DateFrom\": \"12-10-2020\",\r\n            \"DateTo\": \"12-11-2020\"\r\n            },\r\n            {\r\n            \"newPrice\": 15,\r\n            \"DateFrom\": \"1-10-2020\",\r\n            \"DateTo\": \"1-11-2020\"\r\n            }\r\n        ]\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/60d7a2fa6124f93a2f74b89f/addMeal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"60d7a2fa6124f93a2f74b89f",
+								"addMeal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatemeal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \r\n        \"meal_name\": \"meal 99\",\r\n        \"meal_image\": \"image  meal 4\",\r\n        \"description\" :  \"the best meal 44\",\r\n        \"size\": [\r\n            { \"name\": \"large\", \"price\": 888888888 },\r\n            { \"name\": \"meduim\", \"price\": 40 },\r\n            { \"name\": \"small\", \"price\": 30 }\r\n        ],\r\n        \"offer_meal\":[\r\n            {\r\n            \"newPrice\": 99999,\r\n            \"DateFrom\": \"12-10-2020\",\r\n            \"DateTo\": \"12-11-2020\"\r\n            }\r\n           \r\n        ]\r\n       \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d71de5654c8b65547dddf5/editmeal/60d71de5654c8b65547dddf6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d71de5654c8b65547dddf5",
+								"editmeal",
+								"60d71de5654c8b65547dddf6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "additions",
+			"item": [
+				{
+					"name": "deleteaddition",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d64e99c257910eecc4029f/deleteaddition/60d64e99c257910eecc402a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d64e99c257910eecc4029f",
+								"deleteaddition",
+								"60d64e99c257910eecc402a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showaddition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d64e99c257910eecc4029f/showaddition/60d64e99c257910eecc402a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d64e99c257910eecc4029f",
+								"showaddition",
+								"60d64e99c257910eecc402a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_addition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ3NDQ2ODR9.KrnD00LkbnDvVyK8-FS2scH9w6VpvoN1W_0ocKLHqM8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"addition_name\": \"name addition 8\", \"price\": 50  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/60d62505664d7f34db2994f6/add_addition",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"60d62505664d7f34db2994f6",
+								"add_addition"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "general_offers",
+			"item": [
+				{
+					"name": "showgeneral_offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d64e99c257910eecc4029f/showgeneral_offers/60d64e99c257910eecc402a9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d64e99c257910eecc4029f",
+								"showgeneral_offers",
+								"60d64e99c257910eecc402a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletegeneral_offers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d64e99c257910eecc4029f/deletegeneral_offers/60d64e99c257910eecc402a9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d64e99c257910eecc4029f",
+								"deletegeneral_offers",
+								"60d64e99c257910eecc402a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addgeneral_offers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ3NDQ2ODR9.KrnD00LkbnDvVyK8-FS2scH9w6VpvoN1W_0ocKLHqM8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"offer_name\": \"offer name3\",\r\n    \"offer_description\": \"the good offer 3\",\r\n    \"price\": 20,\r\n    \"meal_image\": \"image meal\",\r\n    \"DateFrom\": \"12-10-2020\",\r\n    \"DateTo\": \"12-11-2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/60d62505664d7f34db2994f6/addgeneral_offers?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"60d62505664d7f34db2994f6",
+								"addgeneral_offers"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editGeneral_offer",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"offer_name\": \"offer name 99\",\r\n            \"offer_description\": \"the good offer 99\",\r\n            \"price\": 20,\r\n            \"meal_image\": \"image meal\",\r\n            \"DateFrom\": \"2-7-2020\",\r\n            \"DateTo\": \"8-12-2020\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu/cat/60d71de5654c8b65547dddf5/editGeneral_offer/60d71de5654c8b65547dddff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu",
+								"cat",
+								"60d71de5654c8b65547dddf5",
+								"editGeneral_offer",
+								"60d71de5654c8b65547dddff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"adham@moh.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_edit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fname\":\"assss\",\n    \"lname\":\"mohhhh\",\n    \"password\":\"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/edit/60d7078738ad641fbb7bca5d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"edit",
+								"60d7078738ad641fbb7bca5d"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin_user_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/delUser/60d6328d304eb72b72be6a34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delUser",
+								"60d6328d304eb72b72be6a34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_single",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NTgzMjE2YzlkMDFkNTA1NWYwNjMiLCJpYXQiOjE2MjQ3MzAyNDJ9.vE7l5LX0oz6nluLbnMjszo28I_JBvF468gVKwGXA9QQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/single/60d76afc6803c510500ce169",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"single",
+								"60d76afc6803c510500ce169"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NzgwOGM3MmVhMTIyMzMwOGQ5YzUiLCJpYXQiOjE2MjQ3MzM4MTl9.LUOn5FY3JIys-IN21v91Tz-Z2FCiRbyP9JbbaL4PGg0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fname\":\"adham21\",\n    \"lname\":\"moh\",\n    \"email\":\"adham22@moh.com\",\n    \"password\":\"123456\",\n    \"userType\":\"user\",\n    \"phone\": \"01239681740\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin_deactive",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NTgzMjE2YzlkMDFkNTA1NWYwNjMiLCJpYXQiOjE2MjQ3MjY1Mjd9.biF4gqRW9rwiA578Fnnibj1I0cpH0qamdHoeLvaGHts",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admin/deactivate/60d75df5531fce2e1c1fafcb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"deactivate",
+								"60d75df5531fce2e1c1fafcb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin_active",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NTgzMjE2YzlkMDFkNTA1NWYwNjMiLCJpYXQiOjE2MjQ3MjY1Mjd9.biF4gqRW9rwiA578Fnnibj1I0cpH0qamdHoeLvaGHts",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admin/activate/60d75df5531fce2e1c1fafcb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"activate",
+								"60d75df5531fce2e1c1fafcb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/activate",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjYzFhZDExZTNkMzYzODRjYjIyMzIiLCJpYXQiOjE2MjUwODAyNzh9.jUf-NjDgnbD_sBQHrbQD9sW_z7il6e8BzpNTjeMW3O8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activateCode\":\"0.35506425915863415\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NWRmNTUzMWZjZTJlMWMxZmFmY2IiLCJpYXQiOjE2MjQ3MjcwNjB9.XfJTharRd-6bXctQweZB5pMVDmjbIHSx-SRzrDC_cH4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logout"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjYmViMjQ3YTNmMjMxNThhZTAxZDQiLCJpYXQiOjE2MjUwODA3OTh9.51YRW_VX8GR0GKpArh5V7qlRDKx_yHjl4b3jXcs1FOo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out ALL",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjYmI2ZWE0MzY3NWFhNTQzYmRlOWUiLCJpYXQiOjE2MjUwODI0MzZ9.1uHH7uyuEGEf_r5vnMsanEuwqtnnhoMEcbi3p6t0SX4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/logoutAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logoutAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "addCats",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ4MDQ1NDJ9.hgyWJA1ucUq787tdeX9Is_jo9KMB1D8qeCVgoQwXuH8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catName\": \"cat 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:300/cat/addCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "300",
+							"path": [
+								"cat",
+								"addCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ShowAllCats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjYmI2ZWE0MzY3NWFhNTQzYmRlOWUiLCJpYXQiOjE2MjUwODM5NDJ9.wysZ9zV2asKwI8rYGxpBSjtF7Wo3mdrrpPZ8-dBpP6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cat/displayCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cat",
+								"displayCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ShowSingleCats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cat/showCat/60d88dcae147da6b4e366931",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cat",
+								"showCat",
+								"60d88dcae147da6b4e366931"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditCat",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ4MDQ1NDJ9.hgyWJA1ucUq787tdeX9Is_jo9KMB1D8qeCVgoQwXuH8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catName\": \"cat 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cat/editCats/60d88dcae147da6b4e366931",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cat",
+								"editCats",
+								"60d88dcae147da6b4e366931"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCat",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3OTZiMjUwMGJlYTJmZjA2ZWJlNDciLCJpYXQiOjE2MjQ4MDQ1NDJ9.hgyWJA1ucUq787tdeX9Is_jo9KMB1D8qeCVgoQwXuH8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cat/deleteCat/60d88dbfe147da6b4e36692e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cat",
+								"deleteCat",
+								"60d88dbfe147da6b4e36692e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "addItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ4YmQ3NzNhNjI1ZTk4ZDQxMWJkYjUiLCJpYXQiOjE2MjQ4MTcwMzB9.WKEzDtLj3uEBtiV8ho6h-aKl9OUnfKr6mrvhZVIaC64",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"lahma 6\",\r\n    \"price\":20,\r\n    \"cat_id\":\"60d8bdb33a625e98d411bdbd\",\r\n    \"size\":[\r\n        {\"name\":\"small\",\"price\":200},\r\n        {\"name\":\"large\",\"price\":300}\r\n    ],\r\n    \"description\":\"اي حاجه \",\r\n    \"offer_item\":[\r\n        {\"is_offer\":1,\"newPrice\":200,\"desc\":\"اشتري 3 خد واحده هديه\"}\r\n    ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showAllItems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/showAllItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"showAllItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showSingleItem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/showItem/60d8c2feb99db27ea4e59198",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"showItem",
+								"60d8c2feb99db27ea4e59198"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteItem",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ4YmQ3NzNhNjI1ZTk4ZDQxMWJkYjUiLCJpYXQiOjE2MjQ4MTcwMzB9.WKEzDtLj3uEBtiV8ho6h-aKl9OUnfKr6mrvhZVIaC64",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/deleteItem/60d8c2feb99db27ea4e59198",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deleteItem",
+								"60d8c2feb99db27ea4e59198"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editItem",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ4YmQ3NzNhNjI1ZTk4ZDQxMWJkYjUiLCJpYXQiOjE2MjQ4MTcwMzB9.WKEzDtLj3uEBtiV8ho6h-aKl9OUnfKr6mrvhZVIaC64",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"lahma 99\",\r\n    \"price\":60,\r\n\r\n    \"size\":[\r\n        {\"name\":\"small\",\"price\":900},\r\n        {\"name\":\"large\",\"price\":600}\r\n    ],\r\n    \"description\":\"اي \",\r\n    \"offer_item\":[\r\n        {\"is_offer\":1,\"newPrice\":200,\"desc\":\"اشتري 3 خد واحده هديه\"}\r\n    ]\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/editItem/60d8c396dd341c8bc019a64a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"editItem",
+								"60d8c396dd341c8bc019a64a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "addcarts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NmFmYzY4MDNjNTEwNTAwY2UxNjkiLCJpYXQiOjE2MjQ4MzM0MzV9.v9zhB8-so_R5-wTNxCHLE7juNe6aLpx2kO-Ru904PQ8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"item_id\":\"60d8ff487928a9313cbbdc6d\",\n        \"quant\": 6\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addcarts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addcarts"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NmFmYzY4MDNjNTEwNTAwY2UxNjkiLCJpYXQiOjE2MjQ4MzM0MzV9.v9zhB8-so_R5-wTNxCHLE7juNe6aLpx2kO-Ru904PQ8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletecart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/deletecart/60d7bd29ac490a49bd904b61",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deletecart",
+								"60d7bd29ac490a49bd904b61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editcart",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"quant\": 3,\n        \"cancel\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/editcart/60d7bd29ac490a49bd904b61",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"editcart",
+								"60d7bd29ac490a49bd904b61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showcart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/showcart/60d7c3ca9954cd4ddeb3b2c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"showcart",
+								"60d7c3ca9954cd4ddeb3b2c4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "editorder",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NTgzMjE2YzlkMDFkNTA1NWYwNjMiLCJpYXQiOjE2MjQ3MzAyNDJ9.vE7l5LX0oz6nluLbnMjszo28I_JBvF468gVKwGXA9QQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"finish\",\r\n    \"time_order\":\"hour\",\r\n    \"tax\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/edit/60d901925b3ba0335c9efc52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"edit",
+								"60d901925b3ba0335c9efc52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addorder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NmFmYzY4MDNjNTEwNTAwY2UxNjkiLCJpYXQiOjE2MjQ4MzM0MzV9.v9zhB8-so_R5-wTNxCHLE7juNe6aLpx2kO-Ru904PQ8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart_id\": \"60d8ffda7928a9313cbbdc78\",\r\n    \"address\" :\"minia\",\r\n    \"payment_method\":\"cash\",\r\n   \" receving_method\":\"receipt_form_shop\",\r\n    \"message\":\"ay haga\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addorder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NmFmYzY4MDNjNTEwNTAwY2UxNjkiLCJpYXQiOjE2MjQ4MzM0MzV9.v9zhB8-so_R5-wTNxCHLE7juNe6aLpx2kO-Ru904PQ8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cancelOrder/60d90207fea52d1e6c45ec1d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cancelOrder",
+								"60d90207fea52d1e6c45ec1d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

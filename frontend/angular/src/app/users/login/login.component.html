@@ -1,0 +1,48 @@
+<section class="my-2">
+    <div class="container">
+        <div class = "row">
+            <h3 class="">Login</h3>
+            <div>{{msgCheck}}</div>
+            
+            <form class="my-2 py-2" [formGroup]="userData" (ngSubmit)="userLoginForm()" >
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="text"  formControlName='email' class="form-control" id="email" />
+                    <div *ngIf="isSubmited || (email?.invalid && (email?.dirty || email?.touched))">
+                        <ul>
+                            <li *ngIf="email?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="email?.errors?.email">
+                                Please valid email
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password :</label>
+                    <input type="text"  formControlName='password' class="form-control" id="password" />
+                    <div *ngIf="isSubmited || (password?.invalid && (password?.dirty || password?.touched))">
+                        <ul>
+                            <li *ngIf="password?.errors?.required">
+                                Please fill this field
+                            </li>
+                            <li *ngIf="password?.errors?.minlength">
+                                Please write 3 or more
+                            </li>
+                            <li *ngIf="password?.errors?.maxlength">
+                                Please write 20 or less
+                            </li>  
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button class="btn btn-success mx-2">
+                        <a class="text-white" routerLink="/users/register">Register</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
