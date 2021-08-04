@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   })
 
-  constructor(private _userService: UsersService, private _router: Router) { }
+  constructor(public _userService: UsersService, private _router: Router) { }
 
   ngOnInit(): void { }
 
@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
 
             let token = this.result.success.token
             localStorage.setItem('token', token)
-            // localStorage.setItem('status', '1')
             let typeUser = this.result.success.user.userType
 
             typeUser == 'user' ?

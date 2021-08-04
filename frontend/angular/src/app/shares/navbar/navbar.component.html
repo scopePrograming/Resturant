@@ -31,7 +31,9 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-            <span *ngIf="_userService.status==false; then showLogout else showLogin"></span>
+            <span *ngIf="checkToken === {}; then showLogout else showLogin"></span>
+            
+            {{checkToken | json}}
             <ng-template #showLogin>
                 <div class="nav-item">
                     <a class="nav-link" routerLink="/users/login">Login</a>
