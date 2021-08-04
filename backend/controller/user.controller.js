@@ -197,6 +197,24 @@ const deleteUserByAdmin = async (req, res) => {
     }
 }
 
+const activeByAdmin = async (req, res) => {
+    try {
+        id = req.params.id
+        user = await User.findById(id)
+        user.accountStatus = true
+        await user.save()
+        res.status(200).send({
+            status: true,
+            message: 'user be activate'
+        })
+    } catch (error) {
+        res.status(500).send({
+            status: false,
+            error: error.message
+        })
+    }
+}
+
 const logOut = async (req, res) => {
     try {
         req.user.tokens = req.user.tokens.filter(ele => ele.token != req.token)
