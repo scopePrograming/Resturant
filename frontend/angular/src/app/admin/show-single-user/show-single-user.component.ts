@@ -11,7 +11,6 @@ export class ShowSingleUserComponent implements OnInit {
   singleUser: any = []
   result: any = {}
   msgCheck: any = null
-  id = this.router.snapshot.paramMap.get('id')
 
   constructor(public _userService: UsersService, private router: ActivatedRoute, private _router: Router) {
     this.getSingleUser()
@@ -21,7 +20,8 @@ export class ShowSingleUserComponent implements OnInit {
   }
 
   getSingleUser() {
-    this._userService.showSingleUser(this.id).subscribe(res => {
+    let id = this.router.snapshot.paramMap.get('id')
+    this._userService.showSingleUser(id).subscribe(res => {
       this.result = res
       this.singleUser = this.result.success
     },
@@ -34,13 +34,11 @@ export class ShowSingleUserComponent implements OnInit {
   }
 
   deleteUser() {
-    this._userService.deleteUser().subscribe(res => {
-
-    },
+    this._userService.deleteUser().subscribe(res => { },
       () => { },
       () => {
         localStorage.removeItem('token')
-        this._userService.status = true
+        localStorage.setItem('status', '0')
         this._router.navigate(['/'])
       })
   }

@@ -10,10 +10,9 @@ import { UsersService } from 'src/app/services/users.service';
 export class ShowAllUsersComponent implements OnInit {
   allUsers: any = []
   result: any = {}
-  singleUser: any = []
   msgCheck: any = null
-  id = this.router.snapshot.paramMap.get('id')
-  constructor(private _userService: UsersService, private router: ActivatedRoute, private _router: Router) {
+
+  constructor(private _userService: UsersService, private _router: Router) {
     this.getAllUsers()
   }
 
@@ -33,14 +32,10 @@ export class ShowAllUsersComponent implements OnInit {
       })
   }
 
-  deleteUserByAdmin(i: Required<number>) {
-    this._userService.deleteUserByAdmin(this.id).subscribe(res => {
-      console.log(res)
-      this.allUsers = res.success
-    },
+  deleteByAdmin(id: any) {
+    this._userService.deleteUserByAdmin(id).subscribe(res => { },
       () => { },
       () => {
-        this.allUsers.removeAt(i)
         this._router.navigate(['/showallusers'])
       })
   }

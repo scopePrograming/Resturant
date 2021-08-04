@@ -10,7 +10,7 @@
                 <th>Actions</th>
             </thead>
             <tbody>
-                <tr *ngFor="let user of allUsers; let i = index">
+                <tr *ngFor="let user of allUsers">
                     <td>{{user.fname}} {{user.lname}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.phone}}</td>
@@ -19,7 +19,7 @@
                         <a routerLink="/showsingleuser/{{user._id}}" class="btn btn-primary">Show</a>
                         <a routerLink="/edituser/{{user._id}}" class="btn btn-success">Edit</a>
                         <a routerLink="/deleteuser/{{user._id}}" class="btn btn-danger"
-                            (click)="deleteUserByAdmin(i)">Delete</a>
+                            (click)="deleteByAdmin(user._id)">Delete</a>
                     </td>
                 </tr>
             </tbody>

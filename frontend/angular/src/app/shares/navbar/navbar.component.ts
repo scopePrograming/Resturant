@@ -9,7 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class NavbarComponent implements OnInit {
 
-  checkToken = localStorage.getItem('status')
+  checkStatus = localStorage.getItem('status')
 
 
   constructor(public _userService: UsersService, private _router: Router) { }
@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
       () => {
         localStorage.removeItem('token')
         localStorage.setItem('status', '0')
-        this._router.navigate(['/users/login'])
+        this._router.navigate(['/'])
       })
   }
   logoutAll() {
@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
       () => { },
       () => {
         localStorage.removeItem('token')
-        this._userService.status = true
+        localStorage.setItem('status', '0')
         this._router.navigate(['/'])
       })
   }
