@@ -32,6 +32,7 @@ import { SidebarComponent } from './admin/shares/sidebar/sidebar.component';
 import { ShowAllUsersComponent } from './admin/show-all-users/show-all-users.component';
 import { ShowSingleUserComponent } from './admin/show-single-user/show-single-user.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 // import { ActivatedRoute } from '@angular/router';
 
@@ -58,6 +59,7 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
     ShowAllUsersComponent,
     ShowSingleUserComponent,
     EditUserComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

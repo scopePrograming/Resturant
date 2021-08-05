@@ -24,8 +24,12 @@ export class NavbarComponent implements OnInit {
         localStorage.removeItem('token')
         localStorage.setItem('status', '0')
         this._router.navigate(['/'])
+          .then(() => {
+            window.location.reload();
+          })
       })
   }
+
   logoutAll() {
     this._userService.userLogoutAll().subscribe(res => { },
       () => { },
