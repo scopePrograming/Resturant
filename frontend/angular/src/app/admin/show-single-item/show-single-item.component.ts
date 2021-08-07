@@ -40,6 +40,7 @@ export class ShowSingleItemComponent implements OnInit {
       res => {
         // this.id = res.success._id
         this.singleItem = res.success
+        console.log(this.singleItem.data.itemImage)
         // this.createImageFromBlob(this.singleItem.itemImage)
       }
     )

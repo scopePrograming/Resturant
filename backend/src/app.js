@@ -1,6 +1,8 @@
 const express = require('express')
 require('../dbconnection/db')
 
+const path = require('path')
+
 const userRoutes = require('../routes/user.routes')
 
 const menuRoutes = require('../routes/menu.routes')
@@ -17,9 +19,11 @@ const orderRoutes = require('../routes/order.routers')
 
 
 const app = express()
-app.use(express.json())
+app.use( express.json() )
 
-app.use(cors())
+app.use('/itemImage', express.static(path.join('backend/itemImage'))) // Testing show image ?
+
+app.use( cors() )
 
 app.use(userRoutes)
 app.use(menuRoutes)

@@ -18,10 +18,12 @@ const itemSchema = new mongoose.Schema({
     },
     description:{type: String, trim: true},
     // images to used frond ????????
-    // itemImages: [
-    //     imageName: {type: String , trim: true},
-    //     imagePath: {type: String, required: true}
-    // ],
+    itemImages: [
+        {
+            imageName: {type: String , trim: true},
+            imagePath: {type: String, required: true}
+        }
+    ],
 
     // or
     itemImage:{type: String , trim: true},

@@ -2,10 +2,19 @@
 const Cats = require('../models/cats.model')
 const Items = require('../models/item.model')
 const multer = require('multer')
+const path = require('path')
 const fs = require('fs')
 
 // upload photo
 let imgName = ''
+
+// testing show image ??
+let mainPath = 'Resturant/backend/itemImage'
+let pathImages = path.join(`${mainPath}/`)
+
+let its = [
+    {path: '/', name: 'pla'}
+]
 
 function uploadItemImg() {
     let storage = multer.diskStorage({
@@ -32,21 +41,35 @@ const addItem = async(req, res) => {
 
         items.itemImage = imgName
 
+        // items.pathImages = path.join(`${__dirname}/itemImage/${imgName}`)
+
+        
+        // console.log(items.itemImage)
+        // // let dirName = `${__dirname}`
+        // // let mainPath = path.dirname(`${dirName}`)
+        // // pathImages = path.join(`${__dirname}/itemImage/${imgName}`)
+        console.log(pathImages)
+
+        // items.itemImages.forEach(item => {
+            
+        //     console.log(item)
+        // })
+
         disCount = .05
 
         items.size.forEach(item => {
-            console.log(item.sizeType ,item.price)
+            // console.log(item.sizeType ,item.price)
         })
 
         items.offer_item.forEach(offer => {
-            console.log(offer)
+            // console.log(offer)
         })
 
         // console.log(items)
 
        
         
-        // await items.save()
+        await items.save()
     
         res.status(200).send({
             apiStatus: true,
@@ -122,7 +145,7 @@ const showSingleItem = async(req, res) => {
 
             res.status(200).send({
                 apiStatus: true,
-                success: data,
+                success: {data, pathImages},
                 message: `Single Item`
             })
         } catch (error) {

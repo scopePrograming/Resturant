@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddCategoryComponent } from './admin/add-category/add-category.component';
 import { AddItemComponent } from './admin/add-item/add-item.component';
 import { AddItemsComponent } from './admin/add-items/add-items.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { EditCategoryComponent } from './admin/edit-category/edit-category.component';
 import { EditItemComponent } from './admin/edit-item/edit-item.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'category/showSingleItem/:id', component: ShowSingleItemComponent },
   { path: 'category/editItem/:id', component: EditItemComponent },
   //path admin
+  { path: 'admin/home', component: AdminHomeComponent},
   { path: 'showallusers', component: ShowAllUsersComponent },
   { path: 'showsingleuser/:id', component: ShowSingleUserComponent },
   { path: 'edituser/:id', component: EditUserComponent },

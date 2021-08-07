@@ -1,15 +1,14 @@
 {{singleItem | json}}
-
-
-
 <section>
     <div class="container">
+       
+        {{singleItem.pathImages}}{{singleItem.data.itemImage}}
         <div class="row ">
             <div class="col-lg-9 col-10 m-auto">
                 <div class="card mb-3" >
                     <div class="row g-0" >
                       <div class="col-md-4">
-                        <img src="" class="img-fluid rounded-start" alt="">
+                        <img class="item-image" src="{{singleItem.pathImages}}{{singleItem.data.itemImage}}" class="img-fluid rounded-start" alt="{{singleItem.data.itemImage}}" />
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
