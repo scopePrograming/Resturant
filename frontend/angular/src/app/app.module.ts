@@ -26,7 +26,8 @@ import { EditItemComponent } from './admin/edit-item/edit-item.component';
 import { AddItemComponent } from './admin/add-item/add-item.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { SidebarComponent } from './admin/shares/sidebar/sidebar.component';
 import { ShowAllUsersComponent } from './admin/show-all-users/show-all-users.component';
@@ -80,6 +81,8 @@ import { AdminHeaderComponent } from './admin/shares/admin-header/admin-header.c
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatSliderModule,
+    MatSidenavModule,
   ],
 
   providers: [

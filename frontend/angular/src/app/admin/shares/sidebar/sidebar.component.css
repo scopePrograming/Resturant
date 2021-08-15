@@ -1,4 +1,9 @@
-aside {
-    position: absolute;
-    top: 0
+
+
+.example-sidenav-content {
+ 
+}
+
+.example-sidenav {
+  padding: 20px;
 }

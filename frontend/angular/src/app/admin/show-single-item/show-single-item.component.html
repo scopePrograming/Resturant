@@ -1,47 +1,49 @@
 {{singleItem | json}}
 <section>
     <div class="container">
-       
+
         {{singleItem.pathImages}}{{singleItem.data.itemImage}}
         <div class="row ">
             <div class="col-lg-9 col-10 m-auto">
-                <div class="card mb-3" >
-                    <div class="row g-0" >
-                      <div class="col-md-4">
-                        <img class="item-image" src="{{singleItem.pathImages}}{{singleItem.data.itemImage}}" class="img-fluid rounded-start" alt="{{singleItem.data.itemImage}}" />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                            <h3 class="card-title">{{singleItem.name}}</h3>
-                            <div *ngFor="let cN of _catService.globalVar">
-                                <h5 *ngIf="singleItem.cat_id == cN._id" class="card-title">{{cN.catName}}</h5>
-                            </div>
-                            <p class="card-text">{{singleItem.description}}</p>
-                            <div *ngFor = "let s of singleItem.size" class="d-flex">
-                                <p class="card-text">{{s.sizeType}}</p>
-                                <p class="card-text mx-3">{{s.price}}E.G</p>
-                            </div>
-                            <div *ngFor = "let offer of singleItem.offer_item" class="d-flex">
-                                <p class="card-text">Offer status: {{offer.is_offer}}</p>
-                                <!-- <p class="card-text mx-3">{{offer.newPrice}}E.G</p> -->
-                                <p class="card-text">{{offer.desc}}</p>
-                            </div>
-                            <div>
-                                <p class="card-text">Date from : <small class="text-muted">{{singleItem.DateFrom | date : 'fullDate'}}</small></p>
-                                <p class="card-text">Date to : <small class="text-muted">{{singleItem.DateTo | date : 'fullDate'}}</small></p>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <div class="d-flex">
-                                <button class="btn btn-primary"><a routeLink="">Edit</a></button>
-                                <button class="btn btn-danger mx-2"><a routeLink="">Delete</a></button>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img class="item-image" src="{{url}}{{singleItem.pathImages}}{{singleItem.data.itemImage}}"
+                                class="img-fluid rounded-start" alt="{{singleItem.data.itemImage}}" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">{{singleItem.name}}</h3>
+                                <div *ngFor="let cN of _catService.globalVar">
+                                    <h5 *ngIf="singleItem.cat_id == cN._id" class="card-title">{{cN.catName}}</h5>
+                                </div>
+                                <p class="card-text">{{singleItem.description}}</p>
+                                <div *ngFor="let s of singleItem.size" class="d-flex">
+                                    <p class="card-text">{{s.sizeType}}</p>
+                                    <p class="card-text mx-3">{{s.price}}E.G</p>
+                                </div>
+                                <div *ngFor="let offer of singleItem.offer_item" class="d-flex">
+                                    <p class="card-text">Offer status: {{offer.is_offer}}</p>
+                                    <!-- <p class="card-text mx-3">{{offer.newPrice}}E.G</p> -->
+                                    <p class="card-text">{{offer.desc}}</p>
+                                </div>
+                                <div>
+                                    <p class="card-text">Date from : <small class="text-muted">{{singleItem.DateFrom |
+                                            date : 'fullDate'}}</small></p>
+                                    <p class="card-text">Date to : <small class="text-muted">{{singleItem.DateTo | date
+                                            : 'fullDate'}}</small></p>
+                                </div>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <div class="d-flex">
+                                    <button class="btn btn-primary"><a routeLink="">Edit</a></button>
+                                    <button class="btn btn-danger mx-2"><a routeLink="">Delete</a></button>
+                                </div>
                             </div>
                         </div>
-                      </div>
-                      
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-

@@ -11,10 +11,10 @@ export class ShowSingleItemComponent implements OnInit {
 
   singleItem: any = []
   imageToShow: any = ''
-
+  url: any = 'http://localhost:3000/'
   // id: String = ''
 
-  constructor(public _catService: CategoryService, private router: ActivatedRoute) { 
+  constructor(public _catService: CategoryService, private router: ActivatedRoute) {
     this.getSingleItem()
     this.getCatName()
   }
@@ -27,7 +27,7 @@ export class ShowSingleItemComponent implements OnInit {
   //   reader.addEventListener("load", () => {
   //   this.imageToShow = reader.result
   //   }, false);
-    
+
   //   if (image) {
   //   reader.readAsDataURL(image);
   //   console.log(image)
@@ -54,5 +54,5 @@ export class ShowSingleItemComponent implements OnInit {
     )
   }
 
-  
+
 }
