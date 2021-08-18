@@ -29,18 +29,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { SidebarComponent } from './admin/shares/sidebar/sidebar.component';
 import { ShowAllUsersComponent } from './admin/show-all-users/show-all-users.component';
 import { ShowSingleUserComponent } from './admin/show-single-user/show-single-user.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AddAdminComponent } from './admin/add-admin/add-admin.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { AdminFooterComponent } from './admin/shares/admin-footer/admin-footer.component';
-import { AdminNavbarComponent } from './admin/shares/admin-navbar/admin-navbar.component';
-import { AdminHeaderComponent } from './admin/shares/admin-header/admin-header.component';
 
-// import { ActivatedRoute } from '@angular/router';
+// Module default admin
+import { DefaultModule } from './admin/default/default.module';
+
+// Material
+import { MatButtonModule } from '@angular/material/button';
+
+// Libs 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SidebarComponent } from './admin/shared/sidebar/sidebar.component';
+import { PostsComponent } from './admin/modules/posts/posts.component';
+
 
 
 @NgModule({
@@ -61,16 +65,10 @@ import { AdminHeaderComponent } from './admin/shares/admin-header/admin-header.c
     ShowSingleCatComponent,
     EditItemComponent,
     AddItemComponent,
-    SidebarComponent,
     ShowAllUsersComponent,
     ShowSingleUserComponent,
     EditUserComponent,
-    AdminLoginComponent,
     AddAdminComponent,
-    AdminHomeComponent,
-    AdminFooterComponent,
-    AdminNavbarComponent,
-    AdminHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +81,9 @@ import { AdminHeaderComponent } from './admin/shares/admin-header/admin-header.c
     FormsModule,
     MatSliderModule,
     MatSidenavModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    DefaultModule
   ],
 
   providers: [

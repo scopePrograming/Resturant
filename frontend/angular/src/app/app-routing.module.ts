@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddCategoryComponent } from './admin/add-category/add-category.component';
 import { AddItemComponent } from './admin/add-item/add-item.component';
 import { AddItemsComponent } from './admin/add-items/add-items.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { DefaultComponent } from './admin/default/default.component';
 import { EditCategoryComponent } from './admin/edit-category/edit-category.component';
 import { EditItemComponent } from './admin/edit-item/edit-item.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { DashboardComponent } from './admin/modules/dashboard/dashboard.component';
+import { PostsComponent } from './admin/modules/posts/posts.component';
 import { ShowAllUsersComponent } from './admin/show-all-users/show-all-users.component';
 import { ShowCategoryComponent } from './admin/show-category/show-category.component';
 import { ShowItemsComponent } from './admin/show-items/show-items.component';
@@ -18,7 +20,24 @@ import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: DefaultComponent,
+    children: [
+      {
+      path: '',
+      component: DashboardComponent
+      },
+      {
+        path: 'posts',
+        component: PostsComponent
+      }
+    ]
+  },
+
   { path: '', component: HomeComponent },
+
+  
   // Paths users
   { path: 'users/login', component: LoginComponent },
   { path: 'users/register', component: RegisterComponent },
@@ -35,7 +54,6 @@ const routes: Routes = [
   { path: 'category/showSingleItem/:id', component: ShowSingleItemComponent },
   { path: 'category/editItem/:id', component: EditItemComponent },
   //path admin
-  { path: 'admin/home', component: AdminHomeComponent},
   { path: 'showallusers', component: ShowAllUsersComponent },
   { path: 'showsingleuser/:id', component: ShowSingleUserComponent },
   { path: 'edituser/:id', component: EditUserComponent },
