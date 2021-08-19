@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 // import { ShowItemsComponent } from '../show-items/show-items.component';
@@ -45,3 +46,4 @@ export class ShowCategoryComponent implements OnInit {
    }
 
 }
+

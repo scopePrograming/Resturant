@@ -31,7 +31,15 @@ const routes: Routes = [
       {
         path: 'posts',
         component: PostsComponent
-      }
+      },
+      { 
+        path: 'category/displayCats', 
+        component: ShowCategoryComponent,        
+      },
+      { 
+        path: 'category/displaySingleCat/:id', 
+        component: ShowSingleCatComponent 
+      },
     ]
   },
 
@@ -43,8 +51,8 @@ const routes: Routes = [
   { path: 'users/register', component: RegisterComponent },
   // Paths category
   { path: 'category/addCat', component: AddCategoryComponent },
-  { path: 'category/displayCats', component: ShowCategoryComponent },
-  { path: 'category/displaySingleCat/:id', component: ShowSingleCatComponent },
+  // { path: 'category/displayCats', component: ShowCategoryComponent },
+  // { path: 'category/displaySingleCat/:id', component: ShowSingleCatComponent },
   { path: 'category/editCats/:id', component: EditCategoryComponent },
   { path: 'category/delCats/:id', component: ShowCategoryComponent },
   // Paths items

@@ -1,1 +1,26 @@
-<p>sidebar works!</p>
+<mat-nav-list class="text-center">
+    <mat-card>
+        
+        <span class="material-icons text-center">
+            account_circle
+        </span>
+       
+        <mat-card-content>
+            
+            <mat-card-title>My name</mat-card-title>
+            <mat-card-subtitle>name@example.com</mat-card-subtitle>
+            
+        </mat-card-content>
+    </mat-card>
+
+    
+    <h2 matSubheader>Pages</h2>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/" class="mb-1">
+        <mat-icon>dashboard</mat-icon>
+        <span class="mx-1">Dashboard</span> 
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/category/displayCats" class="mb-1">
+        <mat-icon>category</mat-icon>
+        <span class="mx-1">Gategory</span> 
+    </a>
+</mat-nav-list>

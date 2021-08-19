@@ -11,3 +11,8 @@ mat-drawer-container {
 mat-drawer {
     width: 20rem;
 }
+
+mat-drawer-content,
+mat-drawer {
+    padding: 1rem;
+}

@@ -1,10 +1,47 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>Resturant</span>
-        <span class="example-spacer"></span>
-        login
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>restaurant_menu</mat-icon>     
+            <span>Resturant</span>
+        </button>
+
+        <div fxFlex fxLayout = "row" fxLayoutAlign = "flex-end" >
+            <ul fxLayout="row" fxLayoutGap="20" class="m-0">
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>notifications</mat-icon>
+                    </button>
+                   
+                    <!-- <button mat-icon-button>
+                        <mat-icon>logout</mat-icon>
+                    </button> -->
+                    <button mat-button [matMenuTriggerFor] = "menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>preview</mat-icon> Profile
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>edit</mat-icon> Edit
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>logout</mat-icon> Logout
+                        </button>
+                    </mat-menu>
+                   
+                </li>
+                
+            </ul>
+        </div>
+        <!-- <span class="example-spacer"></span>
+        login -->
     </mat-toolbar-row>
 </mat-toolbar>
