@@ -24,22 +24,28 @@ const routes: Routes = [
     path: '',
     component: DefaultComponent,
     children: [
-      {
-      path: '',
-      component: DashboardComponent
-      },
-      {
-        path: 'posts',
-        component: PostsComponent
-      },
-      { 
-        path: 'category/displayCats', 
-        component: ShowCategoryComponent,        
-      },
-      { 
-        path: 'category/displaySingleCat/:id', 
-        component: ShowSingleCatComponent 
-      },
+      { path: '', component: DashboardComponent },
+      { path: 'posts', component: PostsComponent },
+
+      // Category routes configuration
+      { path: 'category/addCat', component: AddCategoryComponent },
+      { path: 'category/displayCats', component: ShowCategoryComponent },
+      { path: 'category/displaySingleCat/:id', component: ShowSingleCatComponent },
+      { path: 'category/editCats/:id', component: EditCategoryComponent },
+      { path: 'category/delCats/:id', component: ShowCategoryComponent },
+
+      // Item routes configuration
+      { path: 'category/addItem', component: AddItemComponent },
+      { path: 'category/showAllItems', component: ShowItemsComponent },
+      { path: 'category/showSingleItem/:id', component: ShowSingleItemComponent },
+      { path: 'category/editItem/:id', component: EditItemComponent },
+
+      // User routes configuration
+      { path: 'showallusers', component: ShowAllUsersComponent },
+      { path: 'showsingleuser/:id', component: ShowSingleUserComponent },
+      { path: 'edituser/:id', component: EditUserComponent },
+      { path: 'deleteuser/:id', component: ShowAllUsersComponent },
+
     ]
   },
 
@@ -49,23 +55,10 @@ const routes: Routes = [
   // Paths users
   { path: 'users/login', component: LoginComponent },
   { path: 'users/register', component: RegisterComponent },
-  // Paths category
-  { path: 'category/addCat', component: AddCategoryComponent },
-  // { path: 'category/displayCats', component: ShowCategoryComponent },
-  // { path: 'category/displaySingleCat/:id', component: ShowSingleCatComponent },
-  { path: 'category/editCats/:id', component: EditCategoryComponent },
-  { path: 'category/delCats/:id', component: ShowCategoryComponent },
+  
   // Paths items
-  { path: 'category/addItems', component: AddItemsComponent }, //
-  { path: 'category/addItem', component: AddItemComponent }, // 
-  { path: 'category/showAllItems', component: ShowItemsComponent },
-  { path: 'category/showSingleItem/:id', component: ShowSingleItemComponent },
-  { path: 'category/editItem/:id', component: EditItemComponent },
-  //path admin
-  { path: 'showallusers', component: ShowAllUsersComponent },
-  { path: 'showsingleuser/:id', component: ShowSingleUserComponent },
-  { path: 'edituser/:id', component: EditUserComponent },
-  { path: 'deleteuser/:id', component: ShowAllUsersComponent }
+  { path: 'category/addItems', component: AddItemsComponent }, // Testing
+  
 ];
 
 @NgModule({

@@ -145,7 +145,7 @@ const showSingleItem = async(req, res) => {
 
             res.status(200).send({
                 apiStatus: true,
-                success: {data, pathImages},
+                success: data,
                 message: `Single Item`
             })
         } catch (error) {
