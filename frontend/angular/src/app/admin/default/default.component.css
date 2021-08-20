@@ -5,11 +5,11 @@
 }
 
 mat-drawer-container {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 mat-drawer {
-    width: 20rem;
+    width: 15vw;
 }
 
 mat-drawer-content,
