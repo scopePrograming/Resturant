@@ -9,8 +9,6 @@ const menuRoutes = require('../routes/menu.routes')
 
 const cors = require('cors')
 
- 
-
 // New logic
 const catRoutes = require('../routes/cats.routes')
 const itemRoutes = require('../routes/item.routes')
@@ -19,11 +17,11 @@ const orderRoutes = require('../routes/order.routers')
 
 
 const app = express()
-app.use( express.json() )
+app.use(express.json())
 
 app.use('/itemImage', express.static(path.join('backend/itemImage'))) // Testing show image ?
 
-app.use( cors() )
+app.use(cors())
 
 app.use(userRoutes)
 app.use(menuRoutes)

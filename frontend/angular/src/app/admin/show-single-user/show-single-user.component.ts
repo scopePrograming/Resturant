@@ -11,9 +11,10 @@ export class ShowSingleUserComponent implements OnInit {
   singleUser: any = []
   result: any = {}
   msgCheck: any = null
-
+  image: any = ""
   constructor(public _userService: UsersService, private router: ActivatedRoute, private _router: Router) {
     this.getSingleUser()
+    this.getupload()
   }
 
   ngOnInit(): void {
@@ -41,6 +42,12 @@ export class ShowSingleUserComponent implements OnInit {
         localStorage.setItem('status', '0')
         this._router.navigate(['/'])
       })
+  }
+
+  getupload() {
+    this._userService.upLoaded().subscribe(res => {
+      this.image = res.url
+    })
   }
 
 }

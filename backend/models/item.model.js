@@ -6,72 +6,72 @@ const itemSchema = new mongoose.Schema({
     cat_id: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref:'Cats'
+        ref: 'Cats'
     },
-    name: { 
-        type: String, 
+    name: {
+        type: String,
         required: [true, 'Please write item name'],
-        trim: true, 
+        trim: true,
         maxlength: 40,
         minlength: 3,
         unique: [true, 'The name of this item was established']
     },
-    description:{type: String, trim: true},
+    description: { type: String, trim: true },
     // images to used frond ????????
-    itemImages: [
-        {
-            imageName: {type: String , trim: true},
-            imagePath: {type: String, required: true}
-        }
-    ],
-
+    // itemImages: [
+    //     {
+    //         imageName: {type: String , trim: true},
+    //         imagePath: {type: String, required: true}
+    //     }
+    // ],
+    imagePath: { type: String },
     // or
-    itemImage:{type: String , trim: true},
-   
-    size:[
+    itemImage: { type: String, trim: true },
+
+    size: [
         {
-            sizeType:{
+            sizeType: {
                 type: String,
-                enum:['large', 'meduim', 'small', 'none'],
+                enum: ['large', 'meduim', 'small', 'none'],
                 trim: true,
                 default: 'none'
             },
-            price: {type: Number, required:true, trim: true},
-             
+            price: { type: Number, required: true, trim: true },
+
         }
     ],
     dateRange: {
         type: [String, 'Please insert valid date'],
-        trim: true, 
-        required: [true, 'The date of this item was established']    
+        trim: true,
+        required: [true, 'The date of this item was established']
     },
-    offer_item:[
+    offer_item: [
         {
             // is_offer:{type:Boolean,default:false},
-            sizeType:{
+            sizeType: {
                 type: String,
-                enum:['large', 'meduim', 'small', 'none'],
+                enum: ['large', 'meduim', 'small', 'none'],
                 trim: true,
                 default: 'none'
             },
-            newPrice:{type: Number, trim: true},
-            disCount: {type: Number, trim: true, default: 0},
-            desc:{type: String, trim: true},
+            newPrice: { type: Number, trim: true },
+            disCount: { type: Number, trim: true, default: 0 },
+            desc: { type: String, trim: true },
             dateRangeOffer: {
                 type: [String, 'Please insert valid date'],
-                trim: true, 
-                required: [true, 'The date of this item was established']    
+                trim: true,
+                required: [true, 'The date of this item was established']
             },
         }
     ],
 
-}, { timestamps:true })
+}, { timestamps: true })
 
 
-itemSchema.virtual('cartItem',{
-    ref:'Cart',
-    localField:'_id',
-    foreignField:'item_id'
+itemSchema.virtual('cartItem', {
+    ref: 'Cart',
+    localField: '_id',
+    foreignField: 'item_id'
 })
 
 const Items = mongoose.model('Items', itemSchema)
@@ -107,5 +107,5 @@ module.exports = Items
 //     }],
 //     offer:
 
-    
+
 // }

@@ -7,19 +7,19 @@ const fs = require('fs')
 
 // upload photo
 let imgName = ''
-
+// let file = ""
 // testing show image ??
 let mainPath = 'Resturant/backend/itemImage'
 let pathImages = path.join(`${mainPath}/`)
 
 let its = [
-    {path: '/', name: 'pla'}
+    { path: '/', name: 'pla' }
 ]
 
 function uploadItemImg() {
     let storage = multer.diskStorage({
-        destination: function(req, res, cb) { cb(null, 'itemImage') },
-        filename: function(req, file, cb) {
+        destination: function (req, file, cb) { cb(null, 'itemImage') },
+        filename: function (req, file, cb) {
             imgName = `${Date.now()}.${(file.originalname.split('.').pop())}`
             cb(null, imgName)
         }
@@ -30,28 +30,27 @@ function uploadItemImg() {
 }
 
 // Add main item 
-const addItem = async(req, res) => {
+const addItem = async (req, res) => {
 
     try {
-
         let cat = await Cats.findById(req.body.cat_id)
         if (cat == null) throw new Error('not found category')
-        
         let items = new Items({ ...req.body })
-
         items.itemImage = imgName
+        // items.imagePath = req.file.path
 
+        console.log(req.file.path)
         // items.pathImages = path.join(`${__dirname}/itemImage/${imgName}`)
 
-        
+
         // console.log(items.itemImage)
         // // let dirName = `${__dirname}`
         // // let mainPath = path.dirname(`${dirName}`)
         // // pathImages = path.join(`${__dirname}/itemImage/${imgName}`)
-        console.log(pathImages)
+        // console.log(pathImages)
 
         // items.itemImages.forEach(item => {
-            
+
         //     console.log(item)
         // })
 
@@ -67,16 +66,16 @@ const addItem = async(req, res) => {
 
         // console.log(items)
 
-       
-        
-        await items.save()
-    
+
+
+        // await items.save()
+
         res.status(200).send({
             apiStatus: true,
             success: items,
             message: `item inserted`
         })
-    } 
+    }
     catch (error) {
         res.status(500).send({
             apiStatus: false,
@@ -87,7 +86,7 @@ const addItem = async(req, res) => {
 }
 
 // Edit name of main category
-const editItem = async(req, res) => {
+const editItem = async (req, res) => {
     try {
         id = req.params.id
         let data = await Items.findById(id)
@@ -117,7 +116,7 @@ const editItem = async(req, res) => {
 }
 
 //Display all main items
-const showAllItems = async(req, res) => {
+const showAllItems = async (req, res) => {
     try {
         let items = await Items.find()
         if (!items) throw new Error(`Data not founded`)
@@ -136,29 +135,29 @@ const showAllItems = async(req, res) => {
 }
 
 //  Show single main item
-const showSingleItem = async(req, res) => {
-        try {
-            let id = req.params.id
-            let data = await Items.findById(id)
+const showSingleItem = async (req, res) => {
+    try {
+        let id = req.params.id
+        let data = await Items.findById(id)
 
-            if (!data) throw new Error(`Data not founded of items`)
+        if (!data) throw new Error(`Data not founded of items`)
 
-            res.status(200).send({
-                apiStatus: true,
-                success: data,
-                message: `Single Item`
-            })
-        } catch (error) {
-            res.status(500).send({
-                apiStatus: false,
-                result: error.message,
-                message: `Check data`
-            })
-        }
+        res.status(200).send({
+            apiStatus: true,
+            success: data,
+            message: `Single Item`
+        })
+    } catch (error) {
+        res.status(500).send({
+            apiStatus: false,
+            result: error.message,
+            message: `Check data`
+        })
+    }
 
 }
-    //Delete single cat
-const delSingleItem = async(req, res) => {
+//Delete single cat
+const delSingleItem = async (req, res) => {
 
     try {
 

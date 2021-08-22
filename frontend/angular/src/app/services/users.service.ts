@@ -50,8 +50,8 @@ export class UsersService {
     return this._http.delete(`${this.commonURL}delUser/${id}`)
   }
 
-  upLoaded() {
-
+  upLoaded(): Observable<any> {
+    return this._http.get(`https://jsonplaceholder.typicode.com/photos/5`)
   }
 
 }
