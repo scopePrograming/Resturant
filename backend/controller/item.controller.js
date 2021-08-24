@@ -37,7 +37,7 @@ const addItem = async (req, res) => {
         if (cat == null) throw new Error('not found category')
         let items = new Items({ ...req.body })
         items.itemImage = imgName
-        // items.imagePath = req.file.path
+        items.imagePath = req.file.path
 
         console.log(req.file.path)
         // items.pathImages = path.join(`${__dirname}/itemImage/${imgName}`)
@@ -68,7 +68,7 @@ const addItem = async (req, res) => {
 
 
 
-        // await items.save()
+        await items.save()
 
         res.status(200).send({
             apiStatus: true,
@@ -181,6 +181,29 @@ const delSingleItem = async (req, res) => {
     }
 }
 
+const showSingleImage = async (req, res) => {
+    try {
+        let path = req.params.path
+        res.download('./itemImages/' + path)
+        console.log(path)
+        // let data = await Items.findById(path)
+
+        // if (!data) throw new Error(`Data not founded of items`)
+
+        // res.status(200).send({
+        //     apiStatus: true,
+        //     success: data,
+        //     message: `Single Item`
+        // })
+    } catch (error) {
+        res.status(500).send({
+            apiStatus: false,
+            result: error.message,
+            message: `Check data`
+        })
+    }
+
+}
 
 // To exports function controller
 module.exports = {
@@ -190,5 +213,6 @@ module.exports = {
     showSingleItem,
     delSingleItem,
     editItem,
-    uploadItemImg
+    uploadItemImg,
+    showSingleImage
 }

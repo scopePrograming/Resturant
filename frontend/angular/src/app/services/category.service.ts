@@ -21,6 +21,10 @@ export class CategoryService {
     return this._http.post(`${this.commonURL}addCats`, data)
   }
 
+  getImage(url: string): Observable<Blob> {
+    return this._http.get(`${url}`, { responseType: 'blob' })
+  }
+
   displayAllCats(): Observable<any> {
     return this._http.get(`${this.commonURL}displayCats`)
   }
@@ -46,8 +50,8 @@ export class CategoryService {
     return this._http.get(`${this.commonURL}showAllItems`)
   }
 
-  showSingleItem(id: any): Observable<any> {
-    return this._http.get(`${this.commonURL}showItem/${id}`) // , { responseType: 'Blob' as 'json' }
+  showSingleItem(path: any): Observable<any> {
+    return this._http.get(`${this.commonURL}showImage/${path}`) // , { responseType: 'Blob' as 'json' }
   }
 
   editItem(id: any, data: any): Observable<any> {

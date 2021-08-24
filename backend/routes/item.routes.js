@@ -16,6 +16,8 @@ router.get('/cat/showAllItems', itemController.showAllItems)
 // Show single item
 router.get('/cat/showItem/:id', itemController.showSingleItem)
 
+router.get('/cat/showImage/:path', itemController.showSingleImage)
+
 // Edit items by id (edit item)
 router.patch('/cat/editItem/:id', itemController.editItem)
 

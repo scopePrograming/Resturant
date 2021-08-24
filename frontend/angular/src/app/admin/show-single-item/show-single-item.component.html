@@ -8,8 +8,7 @@
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img class="item-image" src=""
-                                class="img-fluid rounded-start" alt="" />
+                            <img class="item-image" [src]="" class="img-fluid rounded-start" alt="" />
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -35,7 +34,8 @@
                                 </div>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 <div class="d-flex">
-                                    <button class="btn btn-primary"><a routerLink="/category/editItem/{{singleItem._id}}">Edit</a></button>
+                                    <button class="btn btn-primary"><a
+                                            routerLink="/category/editItem/{{singleItem._id}}">Edit</a></button>
                                     <button class="btn btn-danger mx-2"><a routerLink="">Delete</a></button>
                                 </div>
                             </div>

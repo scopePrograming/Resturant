@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -8,7 +8,8 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./show-single-item.component.css']
 })
 export class ShowSingleItemComponent implements OnInit {
-
+  @ViewChild('myImage')
+  image!: ElementRef<any>;
   singleItem: any = []
   imageToShow: any = ''
   url: any = 'http://localhost:3000/'
@@ -20,8 +21,19 @@ export class ShowSingleItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.getMyImage('http://localhost:3000/cat/showImage/itemImage/1629740566445.JPG')
   }
+  getImage(path: any) {
+    this._catService.getImage(path).subscribe(
+      res => {
 
+      }
+    )
+  }
+  // getMyImage(url: string): void {
+  //   this._catService.getImage(url)
+  //     .subscribe(response => this.image.nativeElement.src = window.URL.createObjectURL(response))
+  // }
   // createImageFromBlob(image: Blob) {
   //   let reader = new FileReader();
   //   reader.addEventListener("load", () => {
